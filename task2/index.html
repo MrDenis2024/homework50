@@ -14,7 +14,117 @@
 <body>
     <div id="app"></div>
 <script type="text/babel">
+    const Header = (props) => {
+        return (
+          <header className="header">
+              <div className="container header-inner">
+                  <a href="#">
+                      <img className="logo" src={props.logo} alt={props.pageName}/>
+                  </a>
+                  <p className="pageName">{props.pageName}</p>
+                  <div className="header-btn">
+                      <button type="button" className="btn btn-join">Войти</button>
+                      <button type="button" className="btn">Зарегистрироваться</button>
+                  </div>
+              </div>
+          </header>
+        );
+    };
 
+    const Saidbar = (props) => {
+        return (
+            <aside className="saidbar">
+                <nav className="saidbar-nav">
+                    <ul className="nav-list">
+                        <SaidbarLink link={props.mainLink}/>
+                        <SaidbarLink link={props.firstFilm}/>
+                        <SaidbarLink link={props.secondFilm}/>
+                        <SaidbarLink link={props.thirdFilm}/>
+                        <SaidbarLink link={props.fourthFilm}/>
+                        <SaidbarLink link={props.fifthFilm}/>
+                        <SaidbarLink link={props.sixthFilm}/>
+                        <SaidbarLink link={props.seventhFilm}/>
+                        <SaidbarLink link={props.eighthFilm}/>
+                    </ul>
+                </nav>
+            </aside>
+        );
+    };
+
+    const SaidbarLink = (props) => {
+        return (
+            <li className="nav-item">
+                <a href="#" className="nav-link">{props.link}</a>
+            </li>
+        );
+    };
+
+    const Сontent = (props) => {
+        return (
+            <div className="content">
+                <h2 className="content-title">{props.contentTitle}</h2>
+                <img className="content-img" src={props.contentImg} alt={props.contentTitle}/>
+                <div>
+                    <h5 className="info-title">Информация</h5>
+                    <p className="content-text">{props.info}</p>
+                    <h5 className="info-title">Сюжет</h5>
+                    <p className="content-text">{props.story}</p>
+                </div>
+            </div>
+        );
+    };
+
+    const Footer = (props) => {
+        return (
+            <footer className="footer">
+                <div className="footer-inner container">
+                    <a href="#">
+                        <img className="logo"
+                             src={props.logo} alt={props.pageName}/>
+                    </a>
+                    <p className="pageName">{props.pageName}</p>
+                </div>
+            </footer>
+        );
+    };
+
+    const page = (
+        <>
+            <Header
+                logo="https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Wizarding_World_logo.svg/1200px-Wizarding_World_logo.svg.png"
+                pageName="Wizarding World"
+            />
+            <div className="container main">
+                <Saidbar
+                    mainLink="Главаня"
+                    firstFilm="Гарри Поттер и филасовский камень"
+                    secondFilm="Гарри Поттер и Тайная комната"
+                    thirdFilm="Гарри Поттер и узник Азкабана"
+                    fourthFilm="Гарри Поттер и Кубок огня"
+                    fifthFilm="Гарри Поттер и Орден Феникса"
+                    sixthFilm="Гарри Поттер и Принц-полукровка"
+                    seventhFilm="Гарри Поттер и Дары Смерти. Часть 1"
+                    eighthFilm="Гарри Поттер и Дары Смерти. Часть 2"
+                />
+                <Сontent
+                    contentTitle="Гарри Поттер и филасовский камень"
+                    contentImg="https://upload.wikimedia.org/wikipedia/ru/b/b4/Harry_Potter_and_the_Philosopher%27s_Stone_%E2%80%94_movie.jpg"
+                    info=" «Га́рри По́ттер и филосо́фский ка́мень» (англ. Harry Potter and the Philosopher’s Stone, в США и Индии вышел под названием Harry Potter and the Sorcerer’s Stone) — британско-американский фэнтезийный фильм 2001 года режиссёра Криса Коламбуса по сценарию Стива Кловиса. Первый фильм франшизы о мальчике-волшебнике Гарри Поттере, экранизация одноимённого романа Джоан Роулинг (1997). Главные роли исполнили Дэниел Рэдклифф, Руперт Гринт и Эмма Уотсон. Взрослые роли сыграли ведущие британские актёры, такие как Мэгги Смит, Алан Рикман, Джон Клиз и другиеПерейти к разделу «#Актёры и роли».
+                        Проект был официально запущен в производство в 1999 году после того, как компания Warner Bros. выкупила у Джоан Роулинг права на адаптацию первых четырёх романов. В марте 2000 года режиссёром фильма назначили Криса Коламбуса, а написать сценарий было поручено Стиву Кловису, которого утвердили месяцем ранееПерейти к разделу «#Разработка». Съёмки картины проходили с осени 2000 по весну 2001 года в студии Leavesden и многочисленных архитектурных строениях АнглииПерейти к разделу «#Съёмки».
+                        Фильм был выпущен в США и Великобритании 16 ноября 2001 года. Кинолента была удостоена положительных отзывов критиковПерейти к разделу «#Критика», а также имела коммерческий успех, собрав более 1 млрд долларов по всему миру и став самым кассовым фильмом 2001 годаПерейти к разделу «#Кассовые сборы». Картина выдвигалась на три премии «Оскар» (лучшие костюмы, лучшая работа художника-постановщика и лучшая музыка), а также была удостоена множества других наград и номинацийПерейти к разделу «#Награды и номинации». В период с 2002 по 2011 год вышло семь продолжений фильма."
+                    story="Поздним вечером Альбус Дамблдор и Минерва Макгонагалл, профессора школы чародейства и волшебства Хогвартс, вместе с лесничим Рубеусом Хагридом доставляют недавно осиротевшего младенца Гарри Поттера магловскому семейству Дурслей, его единственным родственникам.
+                        До десяти лет Гарри вынужденно живёт вместе с Дурслями (дядей Верноном, тётей Петуньей и кузеном Дадли), которые относятся к нему неприязненно. Незадолго до одиннадцатого дня рождения Гарри, совы начинают доставлять адресованные ему письма. Дурсли не позволяют мальчику открыть их и переселяются на остров. Туда прибывает Хагрид, который доставляет Гарри письмо о его зачислении в Хогвартс. Он отвозит Гарри в Косой переулок за школьными принадлежностями. Там же они заходят в бар «Дырявый котёл», где Гарри знакомится с профессором Квирреллом, будущим учителем защиты от Тёмных искусств. На день рождения мальчик получает от Хагрида сову Буклю. Хагрид рассказывает Гарри, что его родители, Джеймс и Лили Поттеры, были убиты тёмным волшебником Волан-де-Мортом. Однако наложенное на младенца смертельное заклинание Волан-де-Морта отразилось в него самого, оставив Гарри на лбу шрам в виде молнии и уничтожив тело волшебника. Таким образом, Гарри стал известен в волшебном мире как «Мальчик, который выжил».
+                        Гарри отправляется в Хогвартс на поезде, где знакомится с Роном Уизли и Гермионой Грейнджер. По прибытии в Хогвартс Гарри также встречает Драко Малфоя, с которым у него сразу возникает соперничество и вражда. Ученики собираются в Большом зале, где все первокурсники отбираются с помощью Распределяющей шляпы на четыре факультета: Гриффиндор, Пуффендуй, Когтевран и Слизерин. Хотя Распределяющая шляпа рассматривает возможность определить Гарри в Слизерин вместе с Малфоем, в итоге она зачисляет его в Гриффиндор наряду с Роном и Гермионой."
+                />
+            </div>
+            <Footer
+                logo="https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Wizarding_World_logo.svg/1200px-Wizarding_World_logo.svg.png"
+                pageName="Wizarding World"
+            />
+        </>
+    );
+    const app = document.getElementById('app');
+    ReactDOM.createRoot(app).render(page);
 </script>
 </body>
 </html>
